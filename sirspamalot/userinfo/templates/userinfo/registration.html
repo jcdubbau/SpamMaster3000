@@ -1,0 +1,19 @@
+{% extends "userinfo/base.html" %}
+
+
+{%block content %}
+        <h2>
+            Register
+        </h2>
+        <div id="registration_form">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+                {% include "userinfo/_form_input.html" %}
+            {% endfor %}         
+            <button class="btn btn-primary" type="submit">Register</button>
+        </form>
+        </div>
+ 
+
+{% endblock content %}
