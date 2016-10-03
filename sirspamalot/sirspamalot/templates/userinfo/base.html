@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
         {% block title %}
-           Spam in a Can !!!!!
+           SpamMaster 3000
         {% endblock title %}
     </title>
     <!-- Latest compiled and minified CSS -->
@@ -31,7 +31,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a href="{% url 'userinfo:index' %}"><img src="{% static 'images/awesome_tweet.png'%}" height="50px" weight="50px">
+                    <a href="{% url 'userinfo:index' %}"><img src="{% static 'images/awesome_tweet.png'%}" height="100px" weight="100px">
                 </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -40,12 +40,14 @@
 
               <ul class="nav navbar-nav navbar-right">
                 {% if request.user.is_authenticated %}
-                    <li><a href="{% url 'userinfo:user_list' %}">Users</a></li>
-                    <li><a href="{% url 'userinfo:create_message' %}">Create Post</a></li>
-                    <li><a href="http://localhost:8000/users/{{request.user.pk}}/">My Posts</a></li>
+                    <li><a href="{% url 'userinfo:create_message' %}">Create Spam</a></li>
+                    <li><a href="http://localhost:8000/users/{{request.user.pk}}/"></a
+                    <li><a href="{% url 'userinfo:user_list' %}">List of Spammers</a></li>
+
+                    <li><a href="http://localhost:8000/users/{{request.user.pk}}/">My Spam</a></li>
                     <li><a href="{% url 'userinfo:logout' %}">Logout</a></li>
                 {% else %}
-                    <li><a href="{% url 'userinfo:register' %}">Sign Up</a></li>
+                    <li><a href="{% url 'userinfo:register' %}">Sign Up a Free Account!!!</a></li>
                     <li><a href="{% url 'userinfo:login' %}">Login</a></li>
                 {% endif %}
               </ul>
@@ -70,7 +72,7 @@
     <footer class="page-footer">
         <hr>
         <div class="container">
-            &copy; Put name herre | heree
+            &copy; Exit Zer0
         </div>
     </footer>
 

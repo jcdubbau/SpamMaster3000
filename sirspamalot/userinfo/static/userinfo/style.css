@@ -1,3 +1,14 @@
+#navbar-default {
+    background-color: #2C3E50
+
+registration_form .help-block {
+    display: none;
+}
+
+registration_form .btn-primary {
+    margin-top: 20px;
+}
+
 body {
     padding-top: 70px;
     padding-bottom: 70px;
@@ -49,10 +60,4 @@ body {
 }
 
 
-#registration_form .help-block {
-    display: none;
-}
 
-#registration_form .btn-primary {
-    margin-top: 20px;
-}

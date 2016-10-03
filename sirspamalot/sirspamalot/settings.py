@@ -54,7 +54,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 from django.core.urlresolvers import reverse_lazy
-LOGIN_REDIRECT_URL = reverse_lazy('userinfo:index')
+LOGIN_REDIRECT_URL = reverse_lazy('userinfo:user_list')
 LOGIN_URL = reverse_lazy('userinfo:login')
 LOGOUT_URL = reverse_lazy('userinfo:logout')
 

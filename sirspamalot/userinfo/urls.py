@@ -12,8 +12,7 @@ urlpatterns = [
         {'authentication_form': LoginForm},
         name='login'),
 
-    url(r'^logout/$', 
-        'django.contrib.auth.views.logout', 
+    url(r'^logout/$', 'django.contrib.auth.views.logout', 
         {'template_name': 'registration/logout.html'},
         name='logout'),
     url(r'^register/$', views.register, name='register'),
