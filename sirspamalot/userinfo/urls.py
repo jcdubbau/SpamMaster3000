@@ -17,3 +17,5 @@ urlpatterns = [
         name='logout'),
     url(r'^register/$', views.register, name='register'),
 ]
+
+#

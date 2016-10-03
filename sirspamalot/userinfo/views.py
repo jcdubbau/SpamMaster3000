@@ -33,11 +33,11 @@ def users_list(request):
 
 def user_page(request, id):
     spammer = get_object_or_404(User, pk=id)
-    spam = spammer.userinfo_set.all()
+    spam = spammer.spammessage_set.all()
 
     context = {
-		"spammer": spammer,
-		"spam":spam,
+		"spam": spam,
+		"spammer":spammer,
     }
 
     return render(request, "userinfo/user_page.html", context)
@@ -51,7 +51,7 @@ def create_message(request):
             new_message = form.save(commit=False)
             new_message.user_id = request.user.pk
             new_message.save()
-            messages.success(request,)
+            messages.success(request,"Thanks for posting your Spam via SpamMaster3000")
             return redirect('userinfo:index')
     else:
         form=SpamMessageForm()
@@ -70,7 +70,7 @@ def register(request):
         if form.is_valid():
             form.save()
 
-            messages.success(request, "User Created!")
+            messages.success(request, "Thanks for Registering with SpamMaster3000")
 
             new_user = authenticate(username=form.cleaned_data['username'],
                                     password=form.cleaned_data['password1'],

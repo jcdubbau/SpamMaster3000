@@ -3,11 +3,11 @@ from django.core.urlresolvers import reverse
 from datetime import datetime 
 from django.http import HttpResponse
 from django.contrib.auth.models import User
- 
+from django.conf import settings
    
 class SpamMessage(models.Model):
     date_posted = models.DateTimeField('date posted', default=datetime.now)
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
     spam_message = models.CharField(max_length=140)
     
     class Meta:
@@ -20,12 +20,12 @@ class SpamMessage(models.Model):
 
 class Profile(models.Model):
     # Relations
-    user = models.OneToOneField(User)#(settings.AUTH_USER_MODEL, related_name="profile")
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, related_name="profile")
     date = models.DateTimeField('date profile created', default=datetime.now)
     user_bio = models.CharField(max_length=500, blank=True)
 
-    #def __str__(self):
-     #   return self.user.username
+    def __str__(self):
+       return self.user.username
  
     def get_absolute_url(self):
        return reverse('spam_message : user_page', kwargs={'id': self.pk})
