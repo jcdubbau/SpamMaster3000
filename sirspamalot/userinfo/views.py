@@ -16,7 +16,7 @@ def index(request):
 
     context = {
         "Spam": Spam,
-    
+
     }
 
     return render(request, "userinfo/index.html", context)
@@ -54,7 +54,7 @@ def create_message(request):
             messages.success(request,"Thanks for posting your Spam via SpamMaster3000")
             return redirect('userinfo:index')
     else:
-        form=SpamMessageForm()
+        form = SpamMessageForm()
 
     context = {
         "form": form,
@@ -85,6 +85,3 @@ def register(request):
         "form": form,
     }
     return render(request, "userinfo/registration.html", context)
-
-
-

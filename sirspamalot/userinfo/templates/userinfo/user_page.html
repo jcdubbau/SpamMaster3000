@@ -6,11 +6,15 @@
 {% endblock %}
 
 {% block content_classes %}
-    {{block.super}} 
+    {{block.super}}
 {% endblock content_classes %}
 
 {% block content %}
 
+<br/><br/><br/><br/><br/><br/><br/>
+<img src="{% static 'images/awesome_profile.png' %}"></img>
+<h1>User Name: {{ spammer.get_full_name }}</h1>
+<h1>Email: {{ spammer.email }}</h1>
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <h2>{{spammer}}</h2>
@@ -33,7 +37,7 @@
         <div class="panel-body"> {{spam}}</div>
       </div>
 <!-- End message display panel -->
-        
+
     </div>
   </div>
   {% endfor %}

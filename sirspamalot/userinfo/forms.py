@@ -4,11 +4,9 @@ from .models import SpamMessage, Profile
 from django.contrib.auth.models import User
 
 class SpamMessageForm(forms.ModelForm):
-    spam_messages = forms.CharField(max_length=140)
-    
     class Meta:
         model = SpamMessage
-        fields = ('spam_message',)
+        fields = ('spam_message', )
 
 
 class LoginForm(AuthenticationForm):
@@ -31,6 +29,3 @@ class UserRegistrationForm(forms.ModelForm):
             raise forms.ValidationError('Passwords do not match.')
 
         return cd['password2']
-
-
-
