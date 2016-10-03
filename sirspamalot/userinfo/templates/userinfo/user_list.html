@@ -3,7 +3,7 @@
 
 
 {% block title %}
-  {{ block.super }} - Home
+  {{ block.super }} 
 {% endblock %}
 
 {% block content_classes %}
@@ -11,26 +11,28 @@
 {% endblock content_classes %}
 
 {% block content %}
-
-  <div class="row">
-    <div class="col-md-12">
-      <h2>User List</h2>
+<div class="container">
+   <div class="jumbotron">
+    <div class="col-md-8 col-md-offset-1"><br><br>
+      <h2>Registered Spammers</h2>
     </div>
   </div>
-  {% for x in user_list %}
+</div>
+      {% for x in user_list %}
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8 col-md-offset-2" style="text-align:left;">
    
             
-              <h3>{{x.get_username}}</h3>
-            </div>
-            <div class="user-message-body-wrapper">
-              <div class="panel-body">
-                <a href="http://localhost:8000/users/{{x.pk}}/">... see all {{x.get_username}}'s spam</a>
-                </a>
-              </div>
-            </div>
-        </div>
+  <h3>    {{x.get_username}}</h3>
+    </div>
+  </div>  
+    <div class="user-message-body-wrapper">
+      <div class="panel-body">
+        <a href="http://localhost:8000/users/
+        {{x.pk}}/">View {{x.get_username}}'s Spam</a>
+      </div>
+    </div>
+  </div>
     </div>
   </div>
   {% endfor %}
