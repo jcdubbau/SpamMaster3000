@@ -7,6 +7,13 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from models import SpamMessage, Profile
 from .forms import SpamMessageForm, UserRegistrationForm
+def spam_posted(request):
+    Spam = SpamMessage.objects.all()
+    context = {
+         "Spam": Spam,
+    }
+    return render(request, "userinfo/spam_posted.html", context) 
+     
 
 def registered(request):
 
@@ -62,7 +69,7 @@ def create_message(request):
             new_message.user_id = request.user.pk
             new_message.save()
             messages.success(request,"Thanks for posting your Spam via SpamMaster3000")
-            return redirect('userinfo:index')
+            return redirect('userinfo:spam_posted')
     else:
         form = SpamMessageForm()
 

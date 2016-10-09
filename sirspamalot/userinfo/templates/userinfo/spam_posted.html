@@ -1,0 +1,23 @@
+{% extends "userinfo/base.html" %}
+
+
+{%block content %}
+<div class="jumbotron">
+    <div class="col-md-8 col-md-offset-2">
+        <h2 style="color:black;background:white;text-align:center;padding-top:70px;"></h2><br>
+        </h2>
+<h2 style="color:black">Success!!!<br> Your Spam has been Posted.  Thakns for sharing.</h2><br>
+<p style="color:black">SpamMaster3000 is the internet's #1 source for needless information.</p><br><br>
+        
+        <form action="" method="POST">
+            {% csrf_token %}
+
+
+      
+        </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

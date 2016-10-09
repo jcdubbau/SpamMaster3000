@@ -17,7 +17,7 @@ urlpatterns = [
         name='logout'),
     url(r'^register/$', views.register, name='register'),
     url(r'^register/registered.html/$', views.registered, name='registered'),
-
+    url(r'^spam_posted/$', views.spam_posted, name="spam_posted")
 ]
 
 #
