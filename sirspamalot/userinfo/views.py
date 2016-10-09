@@ -80,7 +80,7 @@ def register(request):
         if form.is_valid():
               form.save()
 
-        return redirect('registered.html')
+        return redirect('userinfo/registered.html')
     else:
         form = UserRegistrationForm()
 
