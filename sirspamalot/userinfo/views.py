@@ -8,6 +8,16 @@ from django.contrib.auth.decorators import login_required
 from models import SpamMessage, Profile
 from .forms import SpamMessageForm, UserRegistrationForm
 
+def registered(request):
+
+    Spam = SpamMessage.objects.all()
+
+    context = {
+        "Spam": Spam,
+
+    }
+
+    return render(request, "userinfo/registered.html", context)
 
 
 def index(request):
@@ -68,20 +78,13 @@ def register(request):
         form = UserRegistrationForm(request.POST)
 
         if form.is_valid():
-            form.save()
+              form.save()
 
-            messages.success(request, "Thanks for Registering with SpamMaster3000")
-
-            new_user = authenticate(username=form.cleaned_data['username'],
-                                    password=form.cleaned_data['password1'],
-                                    )
-            login(request, new_user)
-
-            return redirect('userinfo:user_list')
+        return redirect('registered.html')
     else:
         form = UserRegistrationForm()
 
     context = {
         "form": form,
     }
-    return render(request, "userinfo/registration.html", context)
+    return render(request, "registration.html", context)

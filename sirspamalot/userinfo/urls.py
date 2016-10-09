@@ -16,6 +16,8 @@ urlpatterns = [
         {'template_name': 'registration/logout.html'},
         name='logout'),
     url(r'^register/$', views.register, name='register'),
+    url(r'^register/registered.html/$', views.registered, name='registered'),
+
 ]
 
 #
