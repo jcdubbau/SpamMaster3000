@@ -4,11 +4,14 @@
 <h2>Login</h2>
 
     {% if form.errors %}
-    <div class="alert alert-danger">
+    <div class= "container">
+    <div class= "row">
+    <div class= "col-md-5">
+    <div class="alert alert-danger"><br><br>
         Incorrect username or password.
     </div>
     {% endif %}
-    <form action="{% url 'userinfo:login' %}" method="POST"><br><br><br><br><br><br>
+    <form action="{% url 'userinfo:login' %}" method="POST"><br><br><br>
         {% csrf_token %}
         {% for field in form %}
             {%  include "userinfo/_form_input.html" %}
