@@ -4,7 +4,9 @@
 registration_form .help-block {
     display: none;
 }
-
+.user-list-disply {
+background-color: black;
+}
 registration_form .btn-primary {
     margin-top: 20px;
 }
